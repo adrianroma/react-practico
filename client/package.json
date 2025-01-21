@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "@mui/x-data-grid": "latest",
+    "@mui/x-data-grid-generator": "latest",
+    "axios": "^1.7.9",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "description": "https://github.com/mui/mui-x/blob/v7.24.0/docs/data/data-grid/editing/FullFeaturedCrudGrid.js",
+  "devDependencies": {
+    "react-scripts": "latest"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

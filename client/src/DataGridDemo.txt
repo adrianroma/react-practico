@@ -1,0 +1,103 @@
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import { DataGrid } from '@mui/x-data-grid';
+
+const columns = [
+  { field: 'id', headerName: 'ID', width: 90 },
+  {
+    field: 'Nombre',
+    headerName: 'Nombre',
+    width: 150,
+    editable: true,
+  },
+  {
+    field: 'RazonSocial',
+    headerName: 'Razon Social',
+    width: 150,
+    editable: true,
+  },
+  {
+    field: 'Direccion',
+    headerName: 'Direccion',
+    type: 'number',
+    width: 110,
+    editable: true,
+  },
+  {
+    field: 'Completo',
+    headerName: 'Cliente',
+    description: 'This column has a value getter and is not sortable.',
+    sortable: false,
+    width: 160,
+    valueGetter: (value, row) => `${row.Nombre || ''} ${row.RazonSocial || ''}`,
+  },
+  { key: "action", name: "Action" }
+];
+
+const rows = [
+  { id: 1, Nombre: 'Snow', RazonSocial: 'Jon', Direccion: 14 },
+  { id: 2, Nonmbre: 'Lannister', RazonSocial: 'Cersei', Direccion: 31 },
+  { id: 3, Nombre: 'Lannister', RazonSocial: 'Jaime', Direccion: 31 },
+  { id: 4, Nombre: 'Stark', RazonSocial: 'Arya', Direccion: 11 },
+  { id: 5, Nombre: 'Targaryen', RazonSocial: 'Daenerys', Direccion: null },
+  { id: 6, Nombre: 'Melisandre', RazonSocial: null, Direccion: 150 },
+  { id: 7, Nombre: 'Clifford', RazonSocial: 'Ferrara', Direccion: 44 },
+  { id: 8, Nombre: 'Frances', RazonSocial: 'Rossini', Direccion: 36 },
+  { id: 9, Nombre: 'Roxie', RazonSocial: 'Harvey', Direccion: 65 },
+];
+
+function shouldDeleteRow(){
+  return true;
+}
+
+
+function getCellActions  (column, row)  {
+  const cellActions = [
+    {
+      icon: <span className="glyphicon glyphicon-remove" />,
+      callback: () => {
+        const rows = [...this.state.rows];
+        rows.splice(row.index, 1); //
+        this.setState({ rows: rows });
+      }
+    }
+  ];
+  return column.key === "action" ? cellActions : null;
+};
+
+function onGridRowsUpdated ({ fromRow, toRow, updated })  {
+  this.setState(state => {
+    const rows = state.rows.slice();
+    for (let i = fromRow; i <= toRow; i++) {
+      rows[i] = { ...rows[i], ...updated };
+    }
+    return { rows };
+  });
+};
+
+
+export default function DataGridDemo() {
+
+
+  return (
+    <Box sx={{ height: 400, width: '100%' }}>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        initialState={{
+          pagination: {
+            paginationModel: {
+              pageSize: 5,
+            },
+          },
+        }}
+        pageSizeOptions={[5]}
+        checkboxSelection
+        disableRowSelectionOnClick
+        onGridRowsUpdated={this.onGridRowsUpdated}
+        enableCellSelect={true}
+        getCellActions={this.getCellActions}
+      />
+    </Box>
+  );
+}
