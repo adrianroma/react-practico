@@ -3,18 +3,23 @@ Caracteristicas-Desarrollo React
 Backend : 
 
 1.-Multi C.P.U
+
 2.-Middleware Ruta Controlador Modelo
+
 3.-json data en la carpeta /store/data.json 
 
 Frontend:
 
 1.-React
+
 2.-MaterialUI
+
 3.-Grid https://mui.com/
+
 4.-Evita Duplicados al guardar usando el id unico 'rfc'
 
 
-Instalacion 
+Instalacion: 
 
 1.- en carpeta principal "npm install"
 
