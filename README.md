@@ -2,16 +2,16 @@ Caracteristicas-Desarrollo React
 
 Backend : 
 
--Multi C.P.U
--Middleware Ruta Controlador Modelo
--json data en la carpeta /store/data.json 
+1.-Multi C.P.U
+2.-Middleware Ruta Controlador Modelo
+3.-json data en la carpeta /store/data.json 
 
 Frontend:
 
--React
--MaterialUI
--Grid https://mui.com/
--Evita Duplicados al guardar usando el id unico 'rfc'
+1.-React
+2.-MaterialUI
+3.-Grid https://mui.com/
+4.-Evita Duplicados al guardar usando el id unico 'rfc'
 
 
 Instalacion 
