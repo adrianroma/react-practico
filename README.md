@@ -1,5 +1,7 @@
 Caracteristicas-Desarrollo React
 
+ruta principal http://localhost:1234/admin
+
 Backend : 
 
 1.-Multi C.P.U
